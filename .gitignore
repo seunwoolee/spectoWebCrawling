@@ -3,6 +3,9 @@ __pycache__/
 .env
 venv/
 .idea/
+.vs/
+specto.sln
+specto.pyproj
 
 # SQLite database files
 
