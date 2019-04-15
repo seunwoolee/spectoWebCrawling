@@ -134,6 +134,7 @@ if __name__ == '__main__':
         eggsCollectionGroup[td[i].text.replace(" ", "_").replace("'", "").replace(".", "").replace("/", "").replace("-", "").replace("__", "_")] = td[i+1].text
     EggsCollectionGroup(**eggsCollectionGroup).save()
 
+    driver.quit()
 
     #for i,ele in enumerate(td):
     #    print("#####", i, td[i].text.replace(" ", "_").replace("'", "").replace(".", "").replace("/", "").replace("-", "").replace("__", "_"))
