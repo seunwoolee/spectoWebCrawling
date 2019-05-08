@@ -1,4 +1,30 @@
 from django.db import models
+from django.utils import timezone
+
+
+class Egg(models.Model):
+    timestamp = models.DateTimeField(default=timezone.now, verbose_name="입력일자")
+    Total_count = models.IntegerField(default=0, verbose_name="전체개수")
+    Total_amount = models.DecimalField(decimal_places=2, max_digits=19, default=0, verbose_name="전체무게")
+    Big_king_egg_count = models.IntegerField(default=0, verbose_name="큰왕란개수")
+    Big_king_egg_amount = models.DecimalField(decimal_places=2, max_digits=19, default=0, verbose_name="큰왕란무게")
+    King_egg_count = models.IntegerField(default=0, verbose_name="왕란개수")
+    King_egg_amount = models.DecimalField(decimal_places=2, max_digits=19, default=0, verbose_name="왕란무게")
+    Special_egg_count = models.IntegerField(default=0, verbose_name="특란개수")
+    Special_egg_amount = models.DecimalField(decimal_places=2, max_digits=19, default=0, verbose_name="특란무게")
+    Large_egg_count = models.IntegerField(default=0, verbose_name="대란개수")
+    Large_egg_amount = models.DecimalField(decimal_places=2, max_digits=19, default=0, verbose_name="대란무게")
+    Medium_egg_count = models.IntegerField(default=0, verbose_name="중란개수")
+    Medium_egg_amount = models.DecimalField(decimal_places=2, max_digits=19, default=0, verbose_name="중란무게")
+    Small_egg_count = models.IntegerField(default=0, verbose_name="소란개수")
+    Small_egg_amount = models.DecimalField(decimal_places=2, max_digits=19, default=0, verbose_name="소란무게")
+    Smaller_egg_count = models.IntegerField(default=0, verbose_name="경란개수")
+    Smaller_egg_amount = models.DecimalField(decimal_places=2, max_digits=19, default=0, verbose_name="경란무게")
+    Smallest_egg_count = models.IntegerField(default=0, verbose_name="등외란개수")
+    Smallest_egg_amount = models.DecimalField(decimal_places=2, max_digits=19, default=0, verbose_name="등외란무게")
+
+    def __str__(self):
+        return "{} 수집된 계란".format(self.timestamp)
 
 
 class ControllerGroup(models.Model):

@@ -9,18 +9,14 @@ import django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "specto.settings")
 django.setup()
 from sunghwan.models import *
+from decouple import config
 
 
 if __name__ == '__main__':
-    SPECTO = 'http://118.34.86.119:9092/Home/Index/'
+    SPECTO = config('SPECTO_URL')
     driver = webdriver.Chrome('chromedriver')
     driver.implicitly_wait(5)
     driver.get(SPECTO)
-    
-    LOGIN_INFO = {
-        'UserName': 'SPECTO',
-        'Password': '123456'
-    }
 
     driver.find_element_by_css_selector('table > tbody > tr:nth-child(5) > td:nth-child(1) > button').click()
     driver.find_element_by_css_selector('table > tbody > tr:nth-child(5) > td:nth-child(2) > button').click()
