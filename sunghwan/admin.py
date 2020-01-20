@@ -1,10 +1,18 @@
 from django.contrib import admin
 from .models import *
 
+
+@admin.register(ProbesGroup)
+class ProbesGroupAdmin(admin.ModelAdmin):
+    list_display = ['*']
+    # search_fields = ['username', 'first_name']
+    model = ProbesGroup
+
+
 admin.site.register(ControllerGroup)
 admin.site.register(CycleDataGroup)
 admin.site.register(BirdsGroup)
-admin.site.register(ProbesGroup)
+# admin.site.register(ProbesGroup)
 admin.site.register(FanGroup)
 admin.site.register(CoolingGroup)
 admin.site.register(WindowsGroup)
