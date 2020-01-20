@@ -18,12 +18,22 @@ if __name__ == '__main__':
     driver.implicitly_wait(5)
     driver.get(SPECTO)
 
-    driver.find_element_by_css_selector('table > tbody > tr:nth-child(5) > td:nth-child(1) > button').click()
-    driver.find_element_by_css_selector('table > tbody > tr:nth-child(5) > td:nth-child(2) > button').click()
-    driver.find_element_by_css_selector('table > tbody > tr:nth-child(5) > td:nth-child(3) > button').click()
-    driver.find_element_by_css_selector('table > tbody > tr:nth-child(3) > td:nth-child(1) > button').click()
-    driver.find_element_by_css_selector('table > tbody > tr:nth-child(3) > td:nth-child(2) > button').click()
     driver.find_element_by_css_selector('table > tbody > tr:nth-child(3) > td:nth-child(3) > button').click()
+    driver.find_element_by_css_selector('table > tbody > tr:nth-child(3) > td:nth-child(2) > button').click()
+    driver.find_element_by_css_selector('table > tbody > tr:nth-child(5) > td:nth-child(1) > button').click()
+    driver.find_element_by_css_selector('table > tbody > tr:nth-child(5) > td:nth-child(1) > button').click()
+    driver.find_element_by_css_selector('table > tbody > tr:nth-child(3) > td:nth-child(3) > button').click()
+    driver.find_element_by_css_selector('table > tbody > tr:nth-child(3) > td:nth-child(2) > button').click()
+    driver.find_element_by_css_selector('table > tbody > tr:nth-child(5) > td:nth-child(1) > button').click()
+    driver.find_element_by_css_selector('table > tbody > tr:nth-child(5) > td:nth-child(1) > button').click()
+
+
+    # driver.find_element_by_css_selector('table > tbody > tr:nth-child(5) > td:nth-child(1) > button').click()
+    # driver.find_element_by_css_selector('table > tbody > tr:nth-child(5) > td:nth-child(2) > button').click()
+    # driver.find_element_by_css_selector('table > tbody > tr:nth-child(5) > td:nth-child(3) > button').click()
+    # driver.find_element_by_css_selector('table > tbody > tr:nth-child(3) > td:nth-child(1) > button').click()
+    # driver.find_element_by_css_selector('table > tbody > tr:nth-child(3) > td:nth-child(2) > button').click()
+    # driver.find_element_by_css_selector('table > tbody > tr:nth-child(3) > td:nth-child(3) > button').click()
 
     driver.find_element_by_xpath('//*[@id="fieldset-content"]/fieldset/table/tbody/tr[1]/td[1]/button').click()
     driver.find_element_by_xpath('//*[@id="usersdiv"]/button[2]').click()
@@ -35,7 +45,7 @@ if __name__ == '__main__':
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located(('className', 'standartTreeRow'))
     )
-    driver.execute_script("document.getElementsByClassName('standartTreeRow')[4].click()")
+    driver.execute_script("document.getElementsByClassName('standartTreeRow')[8].click()")
 
     time.sleep(2)
 
@@ -130,6 +140,7 @@ if __name__ == '__main__':
         eggsCollectionGroup[td[i].text.replace(" ", "_").replace("'", "").replace(".", "").replace("/", "").replace("-", "").replace("__", "_")] = td[i+1].text
     EggsCollectionGroup(**eggsCollectionGroup).save()
 
+    driver.close()
     driver.quit()
 
     #for i,ele in enumerate(td):
