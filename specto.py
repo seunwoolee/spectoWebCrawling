@@ -39,14 +39,10 @@ if __name__ == '__main__':
     driver.find_element_by_xpath('//*[@id="usersdiv"]/button[2]').click()
     driver.find_element_by_xpath('//*[@id="fieldset-content"]/fieldset/div/table/tbody/tr[7]/td[3]/button').click()
 
-    driver.implicitly_wait(5)
-
+    time.sleep(1)
     driver.get('http://118.34.86.119:9092/Data/Groups/')
-    WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located(('className', 'standartTreeRow'))
-    )
+    time.sleep(3)
     driver.execute_script("document.getElementsByClassName('standartTreeRow')[8].click()")
-
     time.sleep(2)
 
     html = driver.execute_script("return document.getElementsByClassName('obj row20px')[0].innerHTML")
